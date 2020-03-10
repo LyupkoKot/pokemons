@@ -1,37 +1,26 @@
 import * as React from "react";
-import Pokemons from "../component/pokemons/Pokemons";
+import PokemonDashboard from "../component/pokemon/PokemonDashboard";
 import { PokemonDashboardStyled } from "../styles/pokemons/pokemonsView";
 import { Wrapper } from "../styles/app/AppStyled";
 import SearchBar from "../component/searchbar/SearchBar";
 import Layout from "../layouts/Layout";
-// next update
-/*import { connect } from "react-redux";
-import { setPokemonValue } from "../actions/setPokemonValue";*/
 
-const Home = ({ setPokemon }) => {
+const HomePage = () => {
   return (
-    <Wrapper>
-      <Layout>
-        {({ filterPokemon, handleClick }) => (
-          <>
-            <SearchBar />
-            <PokemonDashboardStyled>
-              <Pokemons
-                filterPokemon={filterPokemon}
-                /*setPokemon = {setPokemon}*/
-              />
-            </PokemonDashboardStyled>
-          </>
-        )}
-      </Layout>
-    </Wrapper>
+    <Layout>
+      {({ filterPokemon, setPokemon }) => (
+        <Wrapper>
+          <SearchBar />
+          <PokemonDashboardStyled>
+            <PokemonDashboard
+              filterPokemon={filterPokemon}
+              setPokemon={setPokemon}
+            />
+          </PokemonDashboardStyled>
+        </Wrapper>
+      )}
+    </Layout>
   );
-}
-
-// next update
-/*const mapDispatchToProps = dispatch => {
-  return { setPokemon: val => dispatch(setPokemonValue(val)) };
 };
 
-export default connect(null, mapDispatchToProps)(Home);*/
-export default Home;
+export default HomePage;

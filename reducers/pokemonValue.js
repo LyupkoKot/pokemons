@@ -8,7 +8,7 @@ const initialState = {
 export function pokemonValueReducer(state = initialState, action) {
   switch (action.type) {
     case SET_POKEMON_VALUE:
-      return { ...state, pokemon: action.value };
+      return { ...state, pokemon: action.payload };
     default:
       return state;
   }

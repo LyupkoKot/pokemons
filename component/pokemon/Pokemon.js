@@ -1,12 +1,13 @@
 import React from "react";
-
-import {
-  PokemonBottomHeader,
-  PokemonDashboardStyled,
-  PokemonImage,
-  PokemonName
-} from "../../styles/pokemons/pokemonsView";
+// next
 import Link from "next/link";
+// styles
+import {
+PokemonBottomHeader, PokemonBox,
+PokemonDashboardStyled,
+PokemonImage,
+PokemonName
+} from "../../styles/pokemons/pokemonsView";
 import {
   PokemonNameTopView,
   PokemonTopView,
@@ -20,13 +21,11 @@ import {
   PokemonEvolutionImgTxt,
   PokemonEvolutionImage
 } from "../../styles/pokemons/pokemonView";
-//next update
-/*import { setPokemonValue } from "../../actions/setPokemonValue";
-import { connect } from "react-redux";*/
 
-const Pokemon = ({ pokemon, loading }) => {
+
+const Pokemon = ({ pokemon, setPokemon }) => {
   return (
-    !loading && <PokemonDashboardStyled>
+     <PokemonDashboardStyled>
       <PokemonTopView>
         <PokemonImage>
           <img src={pokemon.image} alt={pokemon.name} />
@@ -65,8 +64,8 @@ const Pokemon = ({ pokemon, loading }) => {
 
         {pokemon.evolutions &&
           pokemon.evolutions.map((item, key) => (
-            <Link href="/pokemons/[id]" as={`/pokemons/${item.id}`}>
-              <PokemonEvolutionBox key={key}>
+            <Link href="/pokemon/[id]" as={`/pokemon/${item.id}`}>
+              <PokemonEvolutionBox  onClick={()=>setPokemon(item)} key={key}>
                 <PokemonEvolutionImgTxt>
                   <PokemonEvolutionImage src={item.image} alt={item.name} />
                   {item.number} - {item.name}
@@ -79,11 +78,5 @@ const Pokemon = ({ pokemon, loading }) => {
   );
 };
 
-// next update
-/*const mapDispatchToProps = dispatch => ({
-  setPokemon: val => dispatch(setPokemonValue(val))
-});
 
-export default connect(null, mapDispatchToProps)(Pokemon);
-*/
 export default Pokemon;

@@ -9,14 +9,14 @@ import {
   PokemonStyled
 } from "../../styles/pokemons/pokemonsView";
 
-function Pokemons({ filterPokemon}) {
+function PokemonDashboard({ filterPokemon, setPokemon}) {
 
   return (
     <PokemonList>
       {filterPokemon.map(function(item, key) {
         return (
-          <Link href="/pokemons/[id]" as={`/pokemons/${item.id}`}>
-            <PokemonBox >
+          <Link href="/pokemon/[id]" as={`/pokemon/${item.id}`}>
+            <PokemonBox onClick={()=>setPokemon(item)} >
               <PokemonStyled key={key}>
                 <PokemonImage>
                   <img src={item.image} alt={item.name} />
@@ -38,4 +38,4 @@ function Pokemons({ filterPokemon}) {
 }
 
 
-export default Pokemons;
+export default PokemonDashboard;
