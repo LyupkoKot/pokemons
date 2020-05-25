@@ -7,21 +7,27 @@ import Pokemon from "../../component/pokemon/Pokemon";
 // styles
 import { PokemonView } from "../../styles/pokemons/pokemonView";
 
-
-const PokemonPage = () => {
-
+const PokemonPage = props => {
   return (
     <PokemonView>
-
       <Layout>
         {({ setPokemon, pokemonData }) => (
-            <Pokemon pokemon={pokemonData} setPokemon={setPokemon} />
+          <Pokemon
+            pokemonId={props.pokemon}
+            pokemon={pokemonData}
+            setPokemon={setPokemon}
+          />
         )}
       </Layout>
-
     </PokemonView>
   );
 };
-
+PokemonPage.getInitialProps = ({ query }) => {
+  return {
+    pokemon: {
+      id: query.id
+    }
+  };
+};
 
 export default PokemonPage;

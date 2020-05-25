@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 // next
 import Link from "next/link";
 // styles
@@ -23,7 +23,11 @@ import {
 } from "../../styles/pokemons/pokemonView";
 
 
-const Pokemon = ({ pokemon, setPokemon }) => {
+const Pokemon = ({ pokemon, setPokemon, pokemonId }) => {
+    useEffect(() => {
+        setPokemon(pokemonId);
+    });
+
   return (
      <PokemonDashboardStyled>
       <PokemonTopView>
