@@ -1,20 +1,18 @@
 import { gql } from "apollo-boost";
 
 const POKEMON_LIST = gql`
-  query Pokemons($first: Int!) {
-    pokemons(first: $first) {
-      id
-      number
-      name
-      image
-      classification
-      types
-      weaknesses
-      evolutions {
-        id
-        number
+  query GetAllPokemon($offset: Int, $take: Int) {
+    getAllPokemon(offset: $offset, take: $take) {
+      key
+      species
+      sprite
+      types {
         name
-        image
+      }
+      evolutions {
+        key
+        species
+        sprite
       }
     }
   }

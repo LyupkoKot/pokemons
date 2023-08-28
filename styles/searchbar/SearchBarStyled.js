@@ -1,42 +1,48 @@
-import styled from "styled-components";
-import { SearchAlt } from "styled-icons/boxicons-regular/SearchAlt";
+import styled from 'styled-components';
+
+
 const SearchBarStyled = styled.div`
+  top: 0;
+  z-index: 100;
   display: flex;
-  background: rgba(0, 0, 0, 0.4);
-  margin: 0 24px;
-  padding: 5px;
-`;
-const SearchFormStyled = styled.form`
-  display: flex;
-  height: 4vh;
-  width: 100%;
-  background: white;
-`;
-const SearchInputStyled = styled.input`
-  width: 85%;
-  font-size: 17px;
-  font-family: sans-serif;
-`;
-const SearchButtonStyled = styled.button`
-  width: 15%;
-  font-size: 17px;
-  font-family: sans-serif;
-  background: rgba(0, 0, 0, 0.4);
-`;
-const IconBox = styled.div`
-  svg {
-    height: 4vh;
+  justify-content: center;
+
+  &.scrolled {
+    position: fixed;
+    right: 10vh;
+    top: 85vh;
+    border-radius: 50%;
+    padding: 20px;  
+    background: rgba(255, 255, 255, 0.2); 
   }
 `;
-const SearchIcon = styled(SearchAlt)`
+
+const SearchInputStyled = styled.input`
+  padding: 10px 16px; 
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);  
   color: white;
+  font-size: 18px;  
+  outline: none;
+  width: 30vw; 
+
+  &:focus {
+    box-shadow: 0 0 15px #FFB6C1;
+  }
+
+`;
+const SearchButtonStyled = styled.button`
+  display: block; 
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 24px; 
 `;
 
 export {
-  SearchFormStyled,
   SearchBarStyled,
   SearchInputStyled,
   SearchButtonStyled,
-  SearchIcon,
-  IconBox
 };
