@@ -7,7 +7,7 @@ import Pokemon from "../../component/pokemon/Pokemon";
 // styles
 import { PokemonView } from "../../styles/pokemons/pokemonView";
 
-const PokemonPage = props => {
+const PokemonPage = (props) => {
   return (
     <PokemonView>
       <Layout>
@@ -25,8 +25,8 @@ const PokemonPage = props => {
 PokemonPage.getInitialProps = ({ query }) => {
   return {
     pokemon: {
-      id: query.id
-    }
+      key: query.id,
+    },
   };
 };
 

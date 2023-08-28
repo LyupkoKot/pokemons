@@ -1,14 +1,12 @@
-import React from 'react';
-import {SearchButtonStyled, SearchIcon, IconBox} from "../../styles/searchbar/SearchBarStyled";
+import React from "react";
+import { SearchButtonStyled } from "../../styles/searchbar/SearchBarStyled";
 
-const SearchButton = () => {
-    return (
-        <SearchButtonStyled>
-            <IconBox>
-            <SearchIcon/>
-            </IconBox>
-        </SearchButtonStyled>
-    );
+const SearchButton = ({ onClick }) => {
+  return (
+    <SearchButtonStyled onClick={onClick}>
+      <i className="fa fa-search"></i>
+    </SearchButtonStyled>
+  );
 };
 
 export default SearchButton;

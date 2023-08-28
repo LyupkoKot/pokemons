@@ -1,14 +1,12 @@
 import styled from "styled-components";
 const PokemonDashboardStyled = styled.div`
   color: rgba(0, 0, 0, 0.87);
-  background-color: rgb(255, 255, 255);
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   box-sizing: border-box;
   font-family: sans-serif;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
   border-radius: 2px;
-  flex: 0 0 50%;
+  flex: 0 0 33.33%;
   min-height: 200px;
   margin: 24px;
 `;
@@ -21,7 +19,7 @@ const PokemonList = styled.div`
 const PokemonBox = styled.div`
   box-sizing: border-box;
   padding: 2px;
-  width: 50%;
+  width: 33.33%;
   height: 184px;
   @media only screen and (max-width: 600px) {
     width: 100%;
@@ -55,7 +53,7 @@ const PokemonBottomHeader = styled.div`
   right: 0px;
   bottom: 0px;
   height: 68px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgb(49 21 21 / 40%);
   display: flex;
   align-items: center;
 `;

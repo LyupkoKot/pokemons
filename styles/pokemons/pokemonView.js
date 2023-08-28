@@ -116,6 +116,11 @@ const PokemonEvolutionImage = styled.img`
   top: 8px;
   left: 16px;
 `;
+const PokemonNoSpriteIcon = styled.div`
+height: 180px;
+font-size: 100px;
+color: rgb(49 21 21 / 40%); 
+`;
 export {
   PokemonView,
   PokemonTopView,
@@ -128,5 +133,6 @@ export {
   PokemonEvolutionTitle,
   PokemonEvolutionBox,
   PokemonEvolutionImgTxt,
-  PokemonEvolutionImage
+  PokemonEvolutionImage,
+  PokemonNoSpriteIcon
 };
